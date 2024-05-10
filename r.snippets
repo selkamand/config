@@ -1,0 +1,417 @@
+snippet tryCatch
+	tryCatch(
+		expr = { 
+			
+		},
+		error = function(err){
+		
+		},
+		warning = function(warn){
+			
+		}
+	)
+
+snippet module
+	${1:name}UI <- function(id){
+		ns <- NS(id)
+		tagList(
+		${0}
+			)
+		}
+
+	${1:name}Server <- function(id, optional_argument){
+		moduleServer(id,
+			function(input, output, session){
+			#Whatever
+			
+			return(Something)
+		}
+		)
+	}
+	
+	# Copy in UI
+	# ${1:name}UI("some_id")
+	
+	# Copy in server
+	# ${1:name}Server("some_id", optional_argument)
+	
+snippet observe_event
+	observeEvent( ${1:event} , {
+	${0}
+	})
+	
+snippet with_progress
+	withProgress( message = "${1:message}" , {
+	${0}
+	})
+
+snippet aa
+	${1:dataset} <- ${1:dataset} %>% ${0}
+
+snippet sidebar_page
+library(shiny)
+ui <- fluidPage(
+titlePanel( "${1:title}" ), 
+
+sidebarLayout(
+	sidebarPanel(
+
+	),
+	mainPanel(
+
+	)
+)
+)
+
+server <- function(input, output, session) {
+
+}
+
+shinyApp(ui, server)
+
+snippet condionalPanelCustom
+	conditionalPanel("output.${1:name}", ns = ns, someuielement)
+	
+	# Copy into server
+	# output[["${1:name}"]] <- reactive({
+	#		${2:contents}
+	# })
+	#	outputOptions(output, "${1}", suspendWhenHidden = FALSE)
+
+# ------------------------------------------------------------
+# scripting
+# ------------------------------------------------------------
+
+snippet hb "exectuable script"
+	#!/usr/bin/env Rscript
+
+snippet lib
+	library(${1:package})
+
+snippet tdv
+	library(tidyverse)
+
+snippet req
+	require(${1:package})
+
+snippet reqns
+	if (!requireNamespace("${1:pkg}", quietly = TRUE)) {
+	  stop("`${1:pkg}` is required: install.packages('${1:pkg}')")
+	}
+
+snippet ifreqns
+	if (requireNamespace("${1:pkg}", quietly = TRUE)) {
+	  ${2:code}
+	}
+
+snippet reqgh
+	if (!requireNamespace("${1:pkg}", quietly = TRUE)) {
+	  stop("`${1:pkg}` is required: devtools::install_github('${2:user}/${1:pkg}')")
+	}
+
+snippet knkt
+	%>%
+	knitr::kable()
+
+snippet docoptr
+	'usage:
+	  ${1:script.R} cmd [-f --arg=<msg>]
+	  ${1:script.R} -h | --help
+
+	options:
+	 -f           Flag
+	 --arg=<msg>  Argument with value
+	 -h --help    Show this screen' -> doc
+
+	library(docopt)
+	opts <- docopt(doc)
+
+snippet sg
+	setGeneric("${1:generic}", function(${2:x, ...}) {
+	  standardGeneric("${1:generic}")
+	})
+
+snippet sm
+	setMethod("${1:generic}", ${2:class}, function(${2:x, ...}) {
+	  ${0}
+	})
+
+snippet sc
+	setClass("${1:Class}", slots = c(${2:name = "type"}))
+
+snippet s3generic
+	${1:generic} <- function(x, ...) UseMethod("${1:generic}", x)
+
+	${1:generic}.${2:method} <- function(x, ...) {
+	  ${0}
+	}
+
+# ------------------------------------------------------------
+# operators
+# ------------------------------------------------------------
+
+snippet op:default
+	# use y if x is.null
+	`%||%` <- function(x, y) if (is.null(x)) y else x
+
+snippet op:notnull
+	# use y if x is not null (otherwise NULL)
+	`%??%` <- function(x, y) if (!is.null(x)) y
+
+snippet op:notnullish
+	# use y if x is not null(ish) (otherwise NULL)
+	`%??%` <- function(x, y) if (!is.null(x) && x != "") y
+
+# ------------------------------------------------------------
+# general
+# ------------------------------------------------------------
+snippet for
+	for (${1:i} in ${2:vector}) {
+		${3:run_something}
+	}
+
+snippet aa
+	${1:var} <- ${1:var} %>%
+	  ${0}
+
+snippet qq
+	${1:var} %>%
+	  ${0}
+
+snippet aq
+	${1:newvar} <- ${2:df} %>%
+	  ${0}
+
+snippet prettydate
+	strftime(Sys.time(), "%A, %b %d, %Y")
+
+snippet tts
+	strftime(Sys.time(), "${1:%F %T}")
+
+snippet hdr
+	# ---- ${1:header} ----
+
+snippet a=
+	${1:opt} = ${1:opt}
+
+snippet zz
+	${1:var} <- ${1:var} %||% ${0}
+
+snippet hh
+	here::here("${1:path}")
+
+snippet ie
+	if (${1:cond}) ${2:true} else ${3:false}
+
+# ------------------------------------------------------------
+# ggplot2
+# ------------------------------------------------------------
+
+snippet gg "ggplot generic"
+	ggplot(${1:data}, aes(${2:aes})) + ${0}
+
+snippet gl "ggplot line"
+	ggplot(${1:data}, aes(${2:x}, ${3:y})) + geom_line()${0}
+
+snippet gp "ggplot point"
+	ggplot(${1:data}, aes(${2:x}, ${3:y})) + geom_point()${0}
+
+snippet gs "ggsave()"
+	ggsave("${1:filename}.pdf", width = ${2:6}, height = ${3:6})${0}
+
+snippet ge "geom_*"
+	geom_${1:point}(${0})
+
+snippet ggeb "element_blank"
+	element_blank($0)
+
+snippet gger "element_rect"
+	element_rect($0)
+
+snippet gget "element_text"
+	element_text($0)
+
+snippet ggel "element_line"
+	element_line($0)
+
+# ------------------------------------------------------------
+# dplyr, purrr
+# ------------------------------------------------------------
+snippet br "bind_rows()"
+	bind_rows(${0})
+
+snippet bc "bind_cols()"
+	bind_cols(${0})
+
+snippet jo "*_join"
+	${1:inner}_join(${0})
+
+snippet pmd "purrr::map_dfr()"
+	purrr::map_dfr(${0})
+
+snippet pmdc "purrr::map_dfc()"
+	purrr::map_dfc(${0})
+
+snippet pm "purrr::map()"
+	purrr::map(${0})
+
+snippet pmc "purrr::map_chr()"
+	purrr::map_chr(${0})
+
+snippet pmi "purrr::map_int()"
+	purrr::map_int(${0})
+
+snippet pmb "purrr::map_lgl()"
+	purrr::map_lgl(${0})
+
+snippet pmdb "purrr::map_dbl()"
+	purrr::map_dbl(${0})
+
+# ------------------------------------------------------------
+# rlang
+# ------------------------------------------------------------
+snippet rlquo
+	${1:var} <- rlang::enquo(${1:var})
+	${1:var}_name <- rlang::quo_name(${1:var})
+
+# ------------------------------------------------------------
+# shiny
+# ------------------------------------------------------------
+snippet shinyapp
+	library(shiny)
+
+	ui <- fluidPage(
+	  ${0}
+	)
+
+	server <- function(input, output, session) {
+
+	}
+
+	shinyApp(ui, server)
+
+snippet shinymod
+	${1:name}UI <- function(id) {
+	  ns <- NS(id)
+	  tagList(
+	    ${0}
+	  )
+	}
+
+	${1:name} <- function(input, output, session, ...) {
+	  ns <- session\$ns
+	}
+
+snippet shiny:external
+	options(shiny.launch.browser = .rs.invokeShinyWindowExternal)
+
+snippet shiny:window
+	options(shiny.launch.browser = .rs.invokeShinyWindowViewer)
+
+snippet shiny:pane
+	options(shiny.launch.browser = .rs.invokeShinyPaneViewer)
+
+snippet htmldep
+	htmltools::htmlDependency(
+	  name = "${1:name}",
+	  version = "${2:1.2.3}",
+	  package = "${3:pkg}",
+	  src = "${4:src}",
+	  script = "${5:script.js}",
+	  stylesheet = "${0:styles.css}",
+	  all_files = FALSE
+	)
+
+snippet val_reactive_wrap
+	${1}_validated <- reactive({ validate(need(!is.null(${1}()),message = "Loading ..." )); return(${1}()) })
+
+snippet val_input_wrap
+	${1} <- reactive({ validate(need(!is.null(input[["${1}"]],message = "Loading ..." ))); return(input[["${1}"]]) })
+	
+snippet vn
+	validate(need(!is.null(${1}()), message = "${2: Loading ...}"))
+
+snippet output_conditional
+	output[["${1}"]] <- reactive({${2}()})
+	outputOptions(output, "${1}", suspendWhenHidden = FALSE) 
+	
+snippet numericInput
+	numericInput(ns("in_num_${1}"), label = "${2}", value = ${3}, min = ${4}, max = ${5}, step = ${6})
+
+snippet pickerInput
+	shinyWidgets::pickerInput(ns("in_pick_${1}"), label = "${2}", choices = ${3}, multiple = ${4:FALSE}, options = shinyWidgets::pickerOptions(actionsBox = ${5:TRUE}, liveSearch = ${6:TRUE}))
+
+# ------------------------------------------------------------
+# testthat
+# ------------------------------------------------------------
+snippet ttht "Create test"
+	test_that("${1:description}", {
+	  $0
+	})
+
+snippet ttef "Expect false"
+	expect_false(${1:${VISUAL}})
+
+snippet ttet "Expect true"
+	expect_true(${1:${VISUAL}})
+
+snippet ttee "Expect equal"
+	expect_equal(${1:${VISUAL}}, $2)
+
+snippet ttdt "Describe that"
+	describe("${1:function}", {
+	  it("${2:action}", {
+	    $0
+	  })
+	})
+
+snippet tooltipna
+	ifelse(is.na(${1:colname}), "", paste0("${1:colname}: ", ${1:colname}, "<br/>")),
+
+snippet .data
+	.data[['${1:column}']]
+
+
+# ------------------------------------------------------------
+# Roxygen
+# ------------------------------------------------------------
+
+snippet com
+	 common_paramater_docs
+
+	
+# ------------------------------------------------------------
+# Graphing
+# ------------------------------------------------------------
+snippet onclick_copy
+	onclick = paste0('navigator.clipboard.writeText("',${1:column_to_copy},'")')
+
+	
+# ------------------------------------------------------------
+# Markdown
+# ------------------------------------------------------------
+
+snippet warn_early_use
+	> **Warning**
+	> This package is in early development and not yet ready for use!
+
+# ------------------------------------------------------------
+# Libraries
+# ------------------------------------------------------------
+
+snippet library_common
+	# Utilities
+	library(here)
+	library(glue)
+	library(knitr)
+	library(clipr)
+	
+	#Data
+	library(tidyverse)
+	
+	#Plotting
+	library(patchwork)
+	library(ggiraph)
+	library(ggsaves)
+	library(ggrepel)
+	library(ggforce)
