@@ -22,7 +22,7 @@ End goal is a terminal that looks roughly like this:
    ```
 6. Install [fisher](https://github.com/jorgebucaran/fisher) for fish plugin management
 7. Install [tide](https://github.com/IlanCosman/tide) for a prettier prompt (don't forget to install the Nerd fonts as described on the bottom of the github readme)
-8. If using alacritty `mkdir -p ~/.config/alacritty; cp config/alacritty.yml ~/.config/alacritty`
+8. If using alacritty `mkdir -p ~/.config/alacritty; cp config/alacritty.toml ~/.config/alacritty`
 
 #### Terminal Multiplexing (TMUX)
 6. Install tmux for terminal multiplexing (`brew install tmux`)
