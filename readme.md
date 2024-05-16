@@ -15,7 +15,11 @@ End goal is a terminal that looks roughly like this:
 1. Install [Alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file). Mac default terminal isn't bad either.
 2. (on mac) Install [homebrew](https://brew.sh/)
 3. `brew install fish` and set to default shell.
-4. Set default shell (`echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells; chsh -s /opt/homebrew/bin/fish`)
+4. Set default shell
+   ```
+   echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+   chsh -s /opt/homebrew/bin/fish
+   ```
 6. Install [fisher](https://github.com/jorgebucaran/fisher) for fish plugin management
 7. Install [tide](https://github.com/IlanCosman/tide) for a prettier prompt (don't forget to install the Nerd fonts as described on the bottom of the github readme)
 
