@@ -67,27 +67,30 @@ funcsave ll
 
 ### Most important basic software installs
 
-On mac
+All of the following can be installed from brew
 ```
-brew install \
 # Utilities
-aria2 \ # fast downloads
-htop \ # better top
-
+aria2 # fast downloads
+htop # better top
+parallel # parallelization utility
 
 # Bioinformatics sofware
-htslib \ 
-samtools \
-bcftools \
+htslib  
+samtools 
+bcftools
 
 ## Containerisation / Virtualisation
-docker \
-lazydocker \ # Terminal Interface for docker management
+docker
+lazydocker # Terminal Interface for docker management
 
 # Dependency Managers
-micromamba \ # Complete conda rewrite in C++ for speed - no python dep :)
-
+micromamba # Complete conda rewrite in C++ for speed - no python dep :)
 modules # environment-modules. might be worth trying Lmod instead which is newer
+```
+
+Install this software all at once using
+```
+cat config/brew_software_list.txt | grep "^[a-zA-Z]" | xargs -n 1 brew install
 ```
 
 ## Languages
