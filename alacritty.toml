@@ -1,0 +1,49 @@
+# Alacritty configuration file
+
+# Set the default shell to Fish and start a tmux session
+[shell]
+program = "/opt/homebrew/bin/fish"
+args = ["-c", "tmux attach-session || tmux new-session -s general fish || fish"]
+
+# Font configuration
+[font]
+size = 13.00
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Bold"
+
+# Additional settings can go below
+# For example, color schemes, window settings, etc.
+# Uncomment and modify as needed
+
+# [window]
+# padding = { x = 2, y = 2 }
+# dynamic_padding = false
+# decorations = "full"
+# startup_mode = "Windowed"
+
+# [colors]
+# [colors.primary]
+# background = "0x000000"
+# foreground = "0xffffff"
+
+# [colors.normal]
+# black = "0x000000"
+# red = "0xff0000"
+# green = "0x00ff00"
+# yellow = "0xffff00"
+# blue = "0x0000ff"
+# magenta = "0xff00ff"
+# cyan = "0x00ffff"
+# white = "0xffffff"
+
+# [colors.bright]
+# black = "0x555555"
+# red = "0xff5555"
+# green = "0x55ff55"
+# yellow = "0xffff55"
+# blue = "0x5555ff"
+# magenta = "0xff55ff"
+# cyan = "0x55ffff"
+# white = "0xffffff"
