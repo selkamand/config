@@ -25,8 +25,9 @@ End goal is a terminal that looks roughly like this:
 
 #### Terminal Multiplexing (TMUX)
 6. Install tmux for terminal multiplexing (`brew install tmux`)
-7. Copy `config/.tmux.conf` to `~/.tmux.conf`
-8. `Ctrl-b + r` to reload tmux conf then `Ctrl-b + I` to install plugins
+7. Install [tmux plugin manager](https://github.com/tmux-plugins/tpm)
+8. Copy `config/.tmux.conf` to `~/.tmux.conf`
+9. `Ctrl-b + r` to reload tmux conf then `Ctrl-b + I` to install plugins
 
 
 ### Core Scripts
