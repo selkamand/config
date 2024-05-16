@@ -33,10 +33,10 @@ End goal is a terminal that looks roughly like this:
 
 ### Core Scripts
 
-I usually like having a folder of quick scripts added to my path
+I usually like having a folder of `~/scripts` added to my path
 ```
 #Add custom path to path
-set PATH {$PATH}:"/Path/To/custom_scripts"
+set -U fish_user_paths (realpath ~/scripts) $fish_user_paths
 ```
 
 For scripts to add see: 
