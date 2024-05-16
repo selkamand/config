@@ -86,7 +86,7 @@ lazydocker # Terminal Interface for docker management
 
 # Dependency Managers
 micromamba # Complete conda rewrite in C++ for speed - no python dep :)
-modules # environment-modules. might be worth trying Lmod instead which is newer
+lmod # Dependency manager
 ```
 
 Install this software all at once using
@@ -123,3 +123,12 @@ My preferred way to manage python is [pyenv](https://github.com/pyenv/pyenv) (`b
 ### More software you can't install from brew
 
 1. [Nextflow](https://www.nextflow.io/docs/latest/install.html)
+
+### Lmod setup
+See brew lmod page for initialisation instructions for fish. 
+
+Then set MODULEPATH variable as follows
+```
+mkdir -p ~/tools/modulefiles/
+set -Ux MODULEPATH (realpath ~/tools/modulefiles/)     
+```
