@@ -90,7 +90,7 @@ modules # environment-modules. might be worth trying Lmod instead which is newer
 
 Install this software all at once using
 ```
-cat config/brew_software_list.txt | grep "^[a-zA-Z]" | xargs -n 1 brew install
+cat config/brew_software_list.txt | grep "^[a-zA-Z]" | cut -f1 -d ' ' | xargs -n 1 brew install
 ```
 
 ## Languages
