@@ -1,0 +1,17 @@
+# Utilities
+aria2 # fast downloads
+htop # better top
+parallel # parallelization utility
+
+# Bioinformatics sofware
+htslib  
+samtools 
+bcftools
+
+## Containerisation / Virtualisation
+docker
+lazydocker # Terminal Interface for docker management
+
+# Dependency Managers
+micromamba # Complete conda rewrite in C++ for speed - no python dep :)
+modules # environment-modules. might be worth trying Lmod instead which is newer
