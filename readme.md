@@ -23,6 +23,8 @@ End goal is a terminal that looks roughly like this:
 6. Install [fisher](https://github.com/jorgebucaran/fisher) for fish plugin management
 7. Install [tide](https://github.com/IlanCosman/tide) for a prettier prompt (don't forget to install the Nerd fonts as described on the bottom of the github readme)
 8. If using alacritty `mkdir -p ~/.config/alacritty; cp config/alacritty.toml ~/.config/alacritty`
+9. Install [radian](https://github.com/randy3k/radian) for a better R terminal.
+10. If using radian `mkdir -p ~/.config/radian; cp config/radian/profile ~/.config/radian/profile` to get keyboard shortcuts for common package development commands (e.g. escape+l provides `devtools::load_all()`)
 
 #### Terminal Multiplexing (TMUX)
 6. Install tmux for terminal multiplexing (`brew install tmux`)
