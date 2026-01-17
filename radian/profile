@@ -1,0 +1,9 @@
+options(
+    radian.escape_key_map = list(
+        list(key = "a", value = "devtools::load_all();"),
+        list(key = "d", value = "devtools::document();"),
+        list(key = "c", value = "devtools::check();"),
+        list(key = "t", value = "devtools::test();"),
+        list(key = "b", value = "devtools::build_readme();")
+    )
+)
