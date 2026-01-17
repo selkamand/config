@@ -114,8 +114,9 @@ cat config/brew_software_list.txt | grep "^[a-zA-Z]" | cut -f1 -d ' ' | xargs -n
 2. Copy `config/.Rprofile` to `~/.Rprofile` so new packages have the right author info. If you're not the owner of this repo, either skip this or change .Rprofile to your information)
 3. In Rstudio, edit snippets - than replace all with content from `r.snippets`
 
-Can use Rswitch to manage multiple R installs / renv for R package virtual environments.
+Can use Rswitch (on mac) to manage multiple R installs / renv for R package virtual environments.
 
+If on a linux distro, always configure R to install binaries from the [posit package manager](https://packagemanager.posit.co/client/#/repos/cran/setup?distribution=ubuntu-24.04&r_environment=other) (otherwise you tend to compile most from source!!). Some linux distros require you configure the [R User Agent Header](https://docs.posit.co/rspm/admin/serving-binaries.html#binary-user-agents).
 
 ### Rust
 Install [rust](https://www.rust-lang.org/tools/install) 
