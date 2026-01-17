@@ -55,6 +55,12 @@ funcsave pbcopy
 funcsave pbpaste
 ```
 
+Set R to open radian terminal
+```
+alias R radian
+funcsave R
+```
+
 On most platforms, you'll need to make ls colourful
 ```
 alias ls 'ls -G'
