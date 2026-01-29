@@ -24,12 +24,38 @@ impl std::fmt::Display for {} {{
   ),
 
   -- derive traits snippet
+  s("drv", {
+    t("#[derive("),
+    i(1, "Debug, Clone, PartialEq, Eq"),
+    t(")]"),
+  }),
+
+  -- iterator trait snippet
   s(
-    "drv",
-    {
-      t("#[derive("),
-      i(1, "Debug, Clone, PartialEq, Eq"),
-      t(")]"),
-    }
+    "iterimpl",
+    fmt(
+      [[
+impl<{R}> Iterator for {Type}<{R}> {{
+    type Item = {Item};
+
+    fn next(&mut self) -> Option<Self::Item> {{
+        if self.{done_flag} {{
+            return None;
+        }}
+
+        {body}
+
+        None
+    }}
+}}
+]],
+      {
+        R = i(1, "R"),
+        Type = i(2, "MyIterator"),
+        Item = i(3, "Result<T>"),
+        done_flag = i(4, "done"),
+        body = i(5, "// iterator logic here"),
+      }
+    )
   ),
 }
