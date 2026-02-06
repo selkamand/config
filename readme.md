@@ -20,8 +20,7 @@ configuration files for applications like tmux, rstudio, fish, etc all in the on
 6. Install [fisher](https://github.com/jorgebucaran/fisher) for fish plugin management
 7. Install [tide](https://github.com/IlanCosman/tide) for a prettier prompt (don't forget to install the Nerd fonts as described on the bottom of the github readme)
 8. If using alacritty `mkdir -p ~/.config/alacritty; cp config/alacritty.toml ~/.config/alacritty`
-9. Install [radian](https://github.com/randy3k/radian) for a better R terminal.
-10. If using radian `mkdir -p ~/.config/radian; cp config/radian/profile ~/.config/radian/profile` to get keyboard shortcuts for common package development commands (e.g. escape+l provides `devtools::load_all()`)
+9. Install [arf](https://github.com/eitsupi/arf) for a better R terminal.
 
 #### Terminal Multiplexing (TMUX)
 6. Install tmux for terminal multiplexing (`brew install tmux`)
@@ -40,7 +39,7 @@ This will also set kitty to use a catppuccin macchiato theme.
 
 I usually like having a folder of `~/scripts` added to my path
 ```
-#Add custom path to path
+# Add custom path to path
 set -U fish_user_paths (realpath ~/scripts) $fish_user_paths
 ```
 
@@ -58,9 +57,9 @@ funcsave pbcopy
 funcsave pbpaste
 ```
 
-Set R to open radian terminal
+Set R to open arf terminal
 ```
-alias R radian
+alias R arf
 funcsave R
 ```
 
