@@ -8,11 +8,8 @@ configuration files for applications like tmux, rstudio, fish, etc all in the on
 
 ### Setup Terminal
 
-End goal is a terminal that looks roughly like this:
 
-![alt text](images/image-3.png)
-
-1. Install [Alacritty](https://github.com/alacritty/alacritty?tab=readme-ov-file). Mac default terminal isn't bad either.
+1. Install the [kitty terminal](https://sw.kovidgoyal.net/kitty/binary/). Main benefit is it supports images!
 2. (on mac) Install [homebrew](https://brew.sh/)
 3. `brew install fish` and set to default shell.
 4. Set default shell
@@ -31,6 +28,12 @@ End goal is a terminal that looks roughly like this:
 7. Install [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 8. Copy `config/.tmux.conf` to `~/.tmux.conf`
 9. `Ctrl-b + r` to reload tmux conf then `Ctrl-b + I` to install plugins
+
+#### Configure terminal to attach to / create a 'general' session when opened
+
+For kitty terminal, just copy `config/kitty/` folder to `~/.config/kitty/`.
+This will also set kitty to use a catppuccin macchiato theme.
+
 
 
 ### Core Scripts
