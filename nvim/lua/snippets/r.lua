@@ -28,4 +28,19 @@ return {
       }
     )
   ),
+  s(
+    "func",
+    fmt(
+      [[
+{} <- function({}) {{
+  {}
+}}
+]],
+      {
+        i(1, "function_name"),
+        i(2, ""),
+        i(3, "# body"),
+      }
+    )
+  ),
 }
