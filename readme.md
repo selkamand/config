@@ -34,7 +34,10 @@ configuration files for applications like tmux, rstudio, fish, etc all in the on
 For kitty terminal, just copy `config/kitty/` folder to `~/.config/kitty/`.
 This will also set kitty to use a catppuccin macchiato theme.
 
+#### Neovim 
 
+1. Install [neovim](https://neovim.io/doc/install/) 
+2. Clone config by running `git clone https://github.com/selkamand/nvim.git ~/.config/nvim`
 
 ### Core Scripts
 
