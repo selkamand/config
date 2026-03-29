@@ -23,6 +23,7 @@ Alt-l = "devtools::load_all(); "
 Alt-c = "devtools::check(); "
 Alt-b = "devtools::build_readme();"
 Alt-t = "devtools::test();"
+Alt-d = "devtools::document(); "
 
 [prompt]
 format = "{status}R {version}> "
