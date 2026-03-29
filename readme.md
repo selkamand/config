@@ -21,6 +21,7 @@ configuration files for applications like tmux, rstudio, fish, etc all in the on
 7. Install [tide](https://github.com/IlanCosman/tide) for a prettier prompt (don't forget to install the Nerd fonts as described on the bottom of the github readme)
 8. If using alacritty `mkdir -p ~/.config/alacritty; cp config/alacritty.toml ~/.config/alacritty`
 9. Install [arf](https://github.com/eitsupi/arf) for a better R terminal.
+10. If using arf, run `arf config init` to create config file and copy contents from `arf/arf.toml` 
 
 #### Terminal Multiplexing (TMUX)
 6. Install tmux for terminal multiplexing (`brew install tmux`)
@@ -136,6 +137,7 @@ My preferred way to manage python is [pyenv](https://github.com/pyenv/pyenv) (`b
 1. [Nextflow](https://www.nextflow.io/docs/latest/install.html)
 
 ### Lmod setup
+
 See brew lmod page for initialisation instructions for fish. 
 
 Then set MODULEPATH variable as follows
