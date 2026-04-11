@@ -148,3 +148,11 @@ Then set MODULEPATH variable as follows
 mkdir -p ~/tools/modulefiles/
 set -Ux MODULEPATH (realpath ~/tools/modulefiles/)     
 ```
+
+## Useful commands 
+
+### Monitoring
+
+- graphics card usage: `nvtop`
+- hardware: `inxi -Fxz`
+
