@@ -26,8 +26,13 @@ configuration files for applications like tmux, rstudio, fish, etc all in the on
 #### Terminal Multiplexing (TMUX)
 6. Install tmux for terminal multiplexing (`brew install tmux`)
 7. Install [tmux plugin manager](https://github.com/tmux-plugins/tpm)
-8. Copy `config/.tmux.conf` to `~/.tmux.conf`
-9. `Ctrl-b + r` to reload tmux conf then `Ctrl-b + I` to install plugins
+8. Install catpuccin-tmux theme 2.3.0
+```
+mkdir -p ~/.config/tmux/plugins/catppuccin
+git clone -b v2.3.0 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+``` 
+9. Copy `config/.tmux.conf` to `~/.tmux.conf`
+10. `Ctrl-b + r` to reload tmux conf then `Ctrl-b + I` to install plugins
 
 #### Configure terminal to attach to / create a 'general' session when opened
 
@@ -38,6 +43,7 @@ This will also set kitty to use a catppuccin macchiato theme.
 
 1. Install [neovim](https://neovim.io/doc/install/) 
 2. Clone config by running `git clone https://github.com/selkamand/nvim.git ~/.config/nvim`
+3. Compile tree-sitter-cli using cargo so it gets linked to your system glibc `cargo install tree-sitter-cli` (after you install rust)
 
 ### Core Scripts
 
